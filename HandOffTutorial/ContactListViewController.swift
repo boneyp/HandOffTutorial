@@ -8,11 +8,11 @@
 
 import UIKit
 
-class MasterViewController: UITableViewController {
+class ContactListViewController: UITableViewController,AddContactViewControllerDelegate {
 
-    var detailViewController: DetailViewController? = nil
-    var objects = [AnyObject]()
-
+    var detailViewController: AddContactViewController? = nil
+    var objects = NSMutableArray()
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,8 +31,11 @@ class MasterViewController: UITableViewController {
         self.navigationItem.rightBarButtonItem = addButton
         if let split = self.splitViewController {
             let controllers = split.viewControllers
-            self.detailViewController = controllers[controllers.count-1].topViewController as? DetailViewController
+            self.detailViewController = controllers[controllers.count-1].topViewController as? AddContactViewController
         }
+        
+        let contact = Contacts()
+        objects =  contact.loadAllContacts()
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,22 +44,26 @@ class MasterViewController: UITableViewController {
     }
 
     func insertNewObject(sender: AnyObject) {
-        objects.insert(NSDate(), atIndex: 0)
-        let indexPath = NSIndexPath(forRow: 0, inSection: 0)
-        self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+        performSegueWithIdentifier("showDetail", sender: self)
+        //objects.insert(NSDate(), atIndex: 0)
+        //let indexPath = NSIndexPath(forRow: 0, inSection: 0)
+        //self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
     }
 
     // MARK: - Segues
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showDetail" {
-            if let indexPath = self.tableView.indexPathForSelectedRow() {
-                let object = objects[indexPath.row] as NSDate
-                let controller = (segue.destinationViewController as UINavigationController).topViewController as DetailViewController
-                controller.detailItem = object
+        if (segue.identifier == "showDetail"){
+                let controller = (segue.destinationViewController as UINavigationController).topViewController as AddContactViewController
+                controller.delegate = self
+               // controller.detailItem = object
                 controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
                 controller.navigationItem.leftItemsSupplementBackButton = true
-            }
+        }
+        else{
+            let controller = segue.destinationViewController as  ContactViewController
+            //controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeBuasttonItem()
+            controller.navigationItem.leftItemsSupplementBackButton = true
         }
     }
 
@@ -72,9 +79,9 @@ class MasterViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
-
-        let object = objects[indexPath.row] as NSDate
-        cell.textLabel!.text = object.description
+        var contact = Contacts()
+        contact = objects[indexPath.row] as Contacts
+        cell.textLabel!.text = contact.firstName
         return cell
     }
 
@@ -85,11 +92,21 @@ class MasterViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            objects.removeAtIndex(indexPath.row)
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            objects.removeObject(indexPath.row)
+            //Contacts.updateSavedContact (objects)
+            tableView.reloadData()
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
         }
+    }
+    
+    
+    @IBAction func unwindToContactsListViewController(unwindSegue: UIStoryboardSegue){
+    }
+    
+    func contactWasSaved(contact: Contacts) {
+        objects.addObject(contact)
+        self.tableView.reloadData()
     }
 
 

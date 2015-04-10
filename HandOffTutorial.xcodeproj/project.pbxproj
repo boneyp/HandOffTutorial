@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		DECCA11D1ABECF9500A40B56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECCA11C1ABECF9500A40B56 /* AppDelegate.swift */; };
-		DECCA11F1ABECF9500A40B56 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECCA11E1ABECF9500A40B56 /* MasterViewController.swift */; };
-		DECCA1211ABECF9500A40B56 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECCA1201ABECF9500A40B56 /* DetailViewController.swift */; };
+		DECCA11F1ABECF9500A40B56 /* ContactListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECCA11E1ABECF9500A40B56 /* ContactListViewController.swift */; };
+		DECCA1211ABECF9500A40B56 /* AddContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECCA1201ABECF9500A40B56 /* AddContactViewController.swift */; };
 		DECCA1241ABECF9500A40B56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DECCA1221ABECF9500A40B56 /* Main.storyboard */; };
 		DECCA1261ABECF9500A40B56 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DECCA1251ABECF9500A40B56 /* Images.xcassets */; };
 		DECCA1291ABECF9500A40B56 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DECCA1271ABECF9500A40B56 /* LaunchScreen.xib */; };
 		DECCA1351ABECF9500A40B56 /* HandOffTutorialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECCA1341ABECF9500A40B56 /* HandOffTutorialTests.swift */; };
+		DECCA13F1ABECFFB00A40B56 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECCA13E1ABECFFB00A40B56 /* ContactViewController.swift */; };
+		DECCA1411ABED47600A40B56 /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECCA1401ABED47600A40B56 /* Contacts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,14 +32,16 @@
 		DECCA1171ABECF9400A40B56 /* HandOffTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HandOffTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DECCA11B1ABECF9500A40B56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DECCA11C1ABECF9500A40B56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DECCA11E1ABECF9500A40B56 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		DECCA1201ABECF9500A40B56 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		DECCA11E1ABECF9500A40B56 /* ContactListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListViewController.swift; sourceTree = "<group>"; };
+		DECCA1201ABECF9500A40B56 /* AddContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactViewController.swift; sourceTree = "<group>"; };
 		DECCA1231ABECF9500A40B56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DECCA1251ABECF9500A40B56 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DECCA1281ABECF9500A40B56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		DECCA12E1ABECF9500A40B56 /* HandOffTutorialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HandOffTutorialTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DECCA1331ABECF9500A40B56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DECCA1341ABECF9500A40B56 /* HandOffTutorialTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandOffTutorialTests.swift; sourceTree = "<group>"; };
+		DECCA13E1ABECFFB00A40B56 /* ContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
+		DECCA1401ABED47600A40B56 /* Contacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contacts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,7 @@
 		DECCA10E1ABECF9400A40B56 = {
 			isa = PBXGroup;
 			children = (
+				DECCA1401ABED47600A40B56 /* Contacts.swift */,
 				DECCA1191ABECF9400A40B56 /* HandOffTutorial */,
 				DECCA1311ABECF9500A40B56 /* HandOffTutorialTests */,
 				DECCA1181ABECF9400A40B56 /* Products */,
@@ -80,8 +85,9 @@
 			isa = PBXGroup;
 			children = (
 				DECCA11C1ABECF9500A40B56 /* AppDelegate.swift */,
-				DECCA11E1ABECF9500A40B56 /* MasterViewController.swift */,
-				DECCA1201ABECF9500A40B56 /* DetailViewController.swift */,
+				DECCA11E1ABECF9500A40B56 /* ContactListViewController.swift */,
+				DECCA13E1ABECFFB00A40B56 /* ContactViewController.swift */,
+				DECCA1201ABECF9500A40B56 /* AddContactViewController.swift */,
 				DECCA1221ABECF9500A40B56 /* Main.storyboard */,
 				DECCA1251ABECF9500A40B56 /* Images.xcassets */,
 				DECCA1271ABECF9500A40B56 /* LaunchScreen.xib */,
@@ -215,9 +221,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DECCA1211ABECF9500A40B56 /* DetailViewController.swift in Sources */,
-				DECCA11F1ABECF9500A40B56 /* MasterViewController.swift in Sources */,
+				DECCA1211ABECF9500A40B56 /* AddContactViewController.swift in Sources */,
+				DECCA13F1ABECFFB00A40B56 /* ContactViewController.swift in Sources */,
+				DECCA11F1ABECF9500A40B56 /* ContactListViewController.swift in Sources */,
 				DECCA11D1ABECF9500A40B56 /* AppDelegate.swift in Sources */,
+				DECCA1411ABED47600A40B56 /* Contacts.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +351,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HandOffTutorial/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -353,6 +362,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HandOffTutorial/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -411,6 +421,7 @@
 				DECCA13A1ABECF9500A40B56 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DECCA13B1ABECF9500A40B56 /* Build configuration list for PBXNativeTarget "HandOffTutorialTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +430,7 @@
 				DECCA13D1ABECF9500A40B56 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
